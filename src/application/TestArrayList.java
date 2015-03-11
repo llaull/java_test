@@ -1,5 +1,6 @@
 package application;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -76,7 +77,7 @@ public class TestArrayList {
         
         //remplissage du tableau primitif
         for (int j = 0; j < arratDeBasse.length; j++) {
-            arratDeBasse[j] = new Test("toto_"+j, Math.random()*100);
+            arratDeBasse[j] = (j < 10) ? new Test("toto_"+"0"+j, Math.random()*100) : new Test("toto_"+j, Math.random()*100);
         }
         
         //ajouter une collec dans une collection
