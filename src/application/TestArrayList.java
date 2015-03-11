@@ -51,20 +51,23 @@ public class TestArrayList {
         }
         
         //peut aller dans les 2 sens,
-         System.out.println("------------------------------- ListIterator");
+        System.out.println("------------------------------- ListIterator");
         ListIterator<String> li = null;
         li = listeVilles.listIterator();
         while (li.hasNext()) {            
             System.out.println("villes :" + li.next());
         }
-         System.out.println("------------------------------- ListIterator previous");
+        System.out.println("------------------------------- ListIterator previous");
         while (li.hasPrevious()) {            
             System.out.println("villes :" + li.previous());
         }
         
         //melange 
+        System.out.println("------------------------------- tri / melange");
         Collections.shuffle(listeVilles);
-        
+        for (String villes : listeVilles) {
+            System.out.println("villes :" + villes);
+        }
                 
     }
     
