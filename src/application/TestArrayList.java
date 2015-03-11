@@ -1,6 +1,7 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -68,7 +69,35 @@ public class TestArrayList {
         for (String villes : listeVilles) {
             System.out.println("villes :" + villes);
         }
-                
+        
+        System.out.println("------------------------------- objet !!");
+        ArrayList<Test> listeObjets = new ArrayList<>();
+        Test[] arratDeBasse = new Test[15];
+        
+        //remplissage du tableau primitif
+        for (int j = 0; j < arratDeBasse.length; j++) {
+            arratDeBasse[j] = new Test("toto_"+j, Math.random()*100);
+        }
+        
+        //ajouter une collec dans une collection
+        //array de basse devient collection avec asList
+        listeObjets.addAll(Arrays.asList(arratDeBasse));
+        
+        Collections.shuffle(listeObjets);
+        
+        for (Test v : listeObjets) {
+            System.out.println("obj -> " + v.name + " num -> " + v.nombre);
+        }
+        
+        System.out.println("------------------------------- objet trie par nom ou nombre generer");
+        //sort trie mais comme c'est un objet on aide avec la class par nom
+        //Collections.sort(listeObjets, new CompNm());
+        Collections.sort(listeObjets, new CompNombre());
+        
+        for (Test v : listeObjets) {
+            System.out.println("obj -> " + v.name + " num -> " + v.nombre);
+        }
+        
     }
     
 }
